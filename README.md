@@ -1,7 +1,7 @@
 SimpleStorage
 =============
 
-A javascript module to make HTML5 Web Storage API ( localStorage or sessionStorage ) easier to use.
+A javascript module to make HTML5 Web Storage API (localStorage or/and sessionStorage) easier to use.
 
 The module is provided in the [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) way and should work well with module kernels like [RequireJS](http://requirejs.org/) or [OzJS](http://ozjs.org/).
 
@@ -65,7 +65,7 @@ You can store the collection in localStorage or sessionStorage with BBStorage li
 	}
 ```
 
-The 'library' will use the data in localStorage instead of fecthing from the server in this way. Whenever you add some model ( the 'add' event ) or do `fecth()` again ( the 'reset' event ), the cache will be updated immediately.
+`library` will use the data in localStorage instead of fecthing from the server in this way. Whenever you add some model (the 'add' event) or do `fecth()` again (the 'reset' event), the cache will be updated immediately.
 
 And there's a similar API `getModel` for models of Backbone:
 
