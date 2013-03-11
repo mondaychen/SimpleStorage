@@ -54,9 +54,11 @@ You can store the collection in localStorage or sessionStorage with BBStorage li
 
 	define(['mod/backbone.storage']), function(BBStorage) {
 		var cache = new BBStorage(true)
-		var library = cache.getCollection('libraryName', Library, {
-			category: this.category
+		var Library = Backbone.Collection.extend({
+			model: Book,
+			url: '/library'
 		})
+		var library = cache.getCollection('libraryName', Library, {foo: 'bar'})
 		var doSomething = function() {..}
 		library.on('reset', doSomething)
 		if(library.length) {
