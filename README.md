@@ -45,8 +45,8 @@ If you create your collection like this before:
 	})
 	var library = new Library([], {foo: 'bar'})
 	var doSomething = function() {..}
-	library.on('add', doSomething)
-	library.fetch()
+	library.on('reset', doSomething)
+	library.fetch({reset: true})
 
 
 You can store the collection in localStorage or sessionStorage with BBStorage like this:
@@ -60,11 +60,11 @@ You can store the collection in localStorage or sessionStorage with BBStorage li
 		})
 		var library = cache.getCollection('libraryName', Library, {foo: 'bar'})
 		var doSomething = function() {..}
-		library.on('add', doSomething)
+		library.on('reset', doSomething)
 		if(library.length) {
 			doSomething()
 		} else {
-			library.fetch()
+			library.fetch({reset: true})
 		}
 	}
 
