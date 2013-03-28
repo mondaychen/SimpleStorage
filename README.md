@@ -13,7 +13,7 @@ Insipred by [CacheProvider.js](https://gist.github.com/aroder/871234).
 	new SimpleStorage(useWebStorageIfAvailable, type)
 
 
- * {Boolean} `useWebStorageIfAvailable` - optional, defaults to `true`. 
+ * {Boolean} `useWebStorageIfAvailable` - optional, defaults to `true`.
   When `true`, SimpleStorage will use the HTML5 web storage API, if available.
  * {String} `type` - optional, defaults to `'local'`.
  When `'session'`, SimpleStorage use sessionStorage instead of localStorage.
@@ -22,7 +22,7 @@ Let's say you name the module `mod/simplestorage`
 
 
 	define(['mod/simplestorage']), function(SimpleStorage) {
-		// use sessionStorage if possible 
+		// use sessionStorage if possible
 		var cache = new SimpleStorage(true, 'session')
 		cache.set('keyName1', 'some string')
 		console.log(cache.get('keyName1')) // 'some string'
@@ -45,7 +45,7 @@ If you create your collection like this before:
 	})
 	var library = new Library([], {foo: 'bar'})
 	var doSomething = function() {..}
-	library.on('reset', doSomething)
+	library.on('add', doSomething)
 	library.fetch()
 
 
@@ -60,7 +60,7 @@ You can store the collection in localStorage or sessionStorage with BBStorage li
 		})
 		var library = cache.getCollection('libraryName', Library, {foo: 'bar'})
 		var doSomething = function() {..}
-		library.on('reset', doSomething)
+		library.on('add', doSomething)
 		if(library.length) {
 			doSomething()
 		} else {
